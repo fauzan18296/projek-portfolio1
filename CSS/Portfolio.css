@@ -1,0 +1,363 @@
+/* clearing CSS */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  border-radius: none;
+}
+
+body {
+  background-color: var(--color-white);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+:root {
+  --color-black-primary: rgb(35, 35, 35);
+  --color-white: rgb(255, 255, 255);
+  --color-grey-primary: rgb(206, 206, 206);
+  --color-blue-primary: rgb(80, 135, 202);
+  --color-blue: rgb(66, 173, 192);
+}
+
+/* Set pembuatan navigasi */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-black-primary);
+  position: fixed;
+  padding: 1.4rem 7%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .nav-brand {
+  justify-content: start;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.navbar .nav-brand a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-white);
+  font-weight: 800;
+  font-style: italic;
+  margin: 0 10px;
+  padding: 0 1.2rem;
+}
+
+.navbar .nav-brand span {
+  color: var(--color-blue);
+}
+
+.navbar .nav-link {
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 0 1rem;
+}
+
+.navbar .nav-link a {
+  text-decoration: none;
+  color: var(--color-white);
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.navbar .nav-link a:hover {
+  color: var(--color-blue);
+}
+
+.navbar .search-input {
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .search-input input {
+  display: inline-block;
+  margin-right: 8px;
+  border-radius: 10px;
+  width: 152px;
+  padding: 4px;
+}
+
+.navbar .search-input button {
+  display: inline-block;
+  width: 5rem;
+  border-radius: 10px;
+  margin: 0 4px;
+  padding: 4px;
+  background-color: rgb(104, 255, 104);
+  color: var(--color-black-primary);
+}
+
+.navbar .icon-bar {
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.navbar .icon-bar a {
+  padding: 0 2.2rem;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: all 1.1s;
+  margin: 0 2.5rem;
+}
+
+.navbar .icon-bar a:hover {
+  color: var(--color-blue);
+}
+
+#menuBar {
+  display: none;
+}
+
+/* membuat Query selector responsive */
+
+/* Media laptop */
+@media only screen and (max-width: 1366px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+/* Media Tablet */
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  /* Cara agar nav-link dapat ditampung di icon-bar */
+
+  #menuBar {
+    display: inline-block;
+  }
+
+  .navbar .nav-link {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--color-black-primary);
+    width: 35rem;
+    height: 100vh;
+    transition: all 1.2s ease;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar .nav-link.active {
+    right: 0;
+  }
+
+  .navbar .nav-link a {
+    color: var(--color-white);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 1.4rem;
+    padding: 1.6rem;
+    animation-delay: 2s;
+    animation-duration: 2s;
+  }
+
+  /* akhir baris cara menampung icon-link dan search-button di menu bar */
+}
+
+/* Media Mobile Phone */
+@media only screen and (max-width: 450px) {
+  html {
+    font-size: 54%;
+  }
+
+  .navbar .search-input {
+    display: none;
+  }
+
+  .navbar .icon-bar a {
+    padding: 0 4.8rem;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: all 1.1s;
+    margin: 0 3.9rem;
+  }
+}
+
+/* Akhir baris media query */
+
+/* section untuk menambahkan halaman baru atau isi baris baru */
+
+section {
+  min-height: 400px;
+}
+
+/* Bagian page Home dengan class jumbotron dan container */
+
+.jumbotron {
+  background-image: url("../IMG/Bg\ Jumbotron\(Web\ Porfolio\)\ 1\ 1.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.jumbotron .container {
+  padding: 70px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.jumbotron .container h1 {
+  font-size: 30px;
+  color: var(--color-white);
+}
+
+.jumbotron .container p {
+  font-size: 30px;
+  color: var(--color-white);
+}
+
+.jumbotron .container img {
+  width: 150px;
+  border: solid 3.1px var(--color-white);
+  border-radius: 50%;
+  animation: infinite;
+  animation-delay: 2.2s;
+  animation-duration: 2.2s;
+  transition: all 2.8s;
+}
+
+.jumbotron.container img:hover {
+  transform: rotateY(360deg) rotateZ(360deg) rotateX(360deg);
+}
+
+/* bagian page About dengan class story dan title */
+
+.title {
+  font-size: 2em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.story {
+  justify-content: center;
+  text-align: justify;
+  align-items: center;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: 34% 50px 60%;
+}
+
+.story p {
+  font-size: 20px;
+  word-spacing: normal;
+}
+
+/* bagian page Biodata dengan class component dan wrapping */
+
+.component {
+  margin-bottom: 10px;
+}
+
+.component .subtitle {
+  font-size: 3em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.component .wrapping {
+  background-color: var(--color-grey-primary);
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+}
+
+.component .wrapping p {
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+/* bagian Page Hope dengan class cta dan content */
+
+.cta {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+.content {
+  background-color: var(--color-white);
+  width: 100%;
+  padding: 20px;
+  font-size: 25px;
+}
+
+.content p {
+  text-align: justify;
+  justify-content: center;
+  align-items: center;
+}
+
+/* bagian page creation web dengan class creation */
+
+.creation {
+  background-color: var(--color-grey-primary);
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.creation h1 {
+  font-size: 2em;
+}
+
+.creation img {
+  width: 230px;
+  border-radius: 20px;
+  margin: 20px 20px 20px;
+}
+
+/* bagian page footer dengan class bottom dan tag span */
+
+footer {
+  background-color: var(--color-black-primary);
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-end {
+  padding-top: 40px;
+  font-size: 1.2em;
+}
+
+.bottom-end span {
+  color: white;
+}
+
+.bottom-end a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+.bottom-end a:hover {
+  color: var(--color-blue);
+}
