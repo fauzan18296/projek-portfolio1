@@ -124,14 +124,14 @@ body {
 /* membuat Query selector responsive */
 
 /* Media laptop */
-@media only screen and (max-width: 1366px) {
+@media screen and (max-width: 1366px) {
   html {
     font-size: 70%;
   }
 }
 
 /* Media Tablet */
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   html {
     font-size: 60%;
   }
@@ -147,33 +147,28 @@ body {
     top: 100%;
     right: -100%;
     background-color: var(--color-black-primary);
-    width: 35rem;
+    width: 32em;
     height: 100vh;
     transition: all 1.2s ease;
-    padding: 0;
-    margin: 0;
   }
 
   .navbar .nav-link.active {
     right: 0;
+    margin: 0 0;
   }
 
   .navbar .nav-link a {
     color: var(--color-white);
-    display: flex;
-    justify-content: start;
-    align-items: center;
+    display: block;
     margin: 1.4rem;
     padding: 1.6rem;
-    animation-delay: 2s;
-    animation-duration: 2s;
   }
 
   /* akhir baris cara menampung icon-link dan search-button di menu bar */
 }
 
 /* Media Mobile Phone */
-@media only screen and (max-width: 450px) {
+@media screen and (max-width: 450px) {
   html {
     font-size: 54%;
   }
@@ -195,10 +190,6 @@ body {
 
 /* section untuk menambahkan halaman baru atau isi baris baru */
 
-section {
-  min-height: 400px;
-}
-
 /* Bagian page Home dengan class jumbotron dan container */
 
 .jumbotron {
@@ -207,6 +198,12 @@ section {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  filter: blur(100);
+  -webkit-filter: blur(100);
   overflow: hidden;
 }
 
@@ -240,14 +237,11 @@ section {
 .jumbotron.container img:hover {
   transform: rotateY(360deg) rotateZ(360deg) rotateX(360deg);
 }
-
-/* bagian page About dengan class story dan title */
-
-.title {
-  font-size: 2em;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 450px) {
+  .jumbotron {
+    filter: blur(100);
+    -webkit-filter: blur(100);
+  }
 }
 
 .story {
